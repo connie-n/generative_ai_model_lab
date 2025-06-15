@@ -1,10 +1,6 @@
-
-import requests, base64
-import json
 import streamlit as st
 from PIL import Image
 from dotenv import load_dotenv
-import os
 
 from tasks.utils.functions import parse_receipt_text
 from transformers import pipeline
@@ -24,7 +20,7 @@ def main():
 
     st.title("Optical Character Recognition (OCR) with OCR-Donut-CORD")
 
-    with open("./tasks/utils/description/ocr_description.txt", "r") as file:
+    with open("./tasks/utils/description/ocr_desc.txt", "r") as file:
         description = file.read()
     st.markdown(description)
     
