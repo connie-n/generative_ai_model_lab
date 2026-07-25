@@ -5,11 +5,11 @@ from dotenv import load_dotenv
 from transformers import pipeline
 
 
-def load_model_blip():
-    return pipeline("image-to-text", model="Salesforce/blip-image-captioning-large")
+# def load_model_blip():
+#     return pipeline("image-to-text", model="Salesforce/blip-image-captioning-large")
 
 
-pipe = load_model_blip()
+# pipe = load_model_blip()
 
 
 def main():
@@ -17,9 +17,9 @@ def main():
 
     stream = True
 
-    st.title("Vision-Language Image Captioning with BLIP")
+    st.title("Biomedical Research Agent with RAG System")
 
-    with open("./tasks/utils/description/image_captioning_desc.txt", "r") as file:
+    with open("./tasks/utils/description/biomedical_desc.txt", "r") as file:
         description = file.read()
     st.markdown(description)
 

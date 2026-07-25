@@ -1,11 +1,18 @@
-This pages allows you to generate captions for the uploaded images using the Paligemma model. 
-You can upload an image, and the model will provide a descriptive caption for it. 
+This page demonstrates an image captioning application using the **BLIP (Bootstrapping Language-Image Pre-training) model**.
+
+You can upload an image, and the model will analyze the visual content and generate a natural language description (caption) based on the image.
+
+**Model Information:**
+
+This demo uses the Hugging Face model:
+
+- Model: `Salesforce/blip-image-captioning-large`
+- Task: Image-to-Text Generation
 
 
-**Note on Image Uploads:**
-
-This application utilizes the NVIDIA NIM API and is currently being used under a free tier. Due to this, there is a limitation on the size of the images that can be uploaded. Please ensure that the images you upload are below approximately 135KB in size for testing purposes.
-
+**Note on Image Processing:**
+This application uses the Hugging Face Transformers pipeline for inference.
+The processing time may vary depending on the image size and computational resources. For optimal performance, please upload reasonably sized image files.
 
 **How to use:**
 1. Click on the 'Browse files' button to upload an image.

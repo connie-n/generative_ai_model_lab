@@ -1,0 +1,22 @@
+Biomedical researchers often spend significant time reviewing large volumes of scientific literature to identify relevant evidence.
+
+This project implements an AI-powered biomedical research assistant using an agentic RAG architecture. The system retrieves relevant biomedical papers from PubMed, analyzes research evidence, and generates citation-backed summaries to help users quickly understand scientific findings.
+
+The goal of this project is to demonstrate an end-to-end AI engineering workflow, including data retrieval, RAG pipeline development, LLM integration, and cloud deployment.
+
+
+**Agent Workflow: **
+1. User Query Analysis & Planning (Research Agent)
+2. Retrieve relevant biomedical papers from PubMed
+3. Generate embeddings and perform RAG retrieval
+4. Rerank retrieved documents
+5. Generate evidence-based summary
+6. Provide citations 
+
+
+
+If you encounter any issues, please refer to the documentation or contact me.
+
+email: wongyung68@gmail.com
+
+
