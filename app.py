@@ -6,20 +6,22 @@ from dotenv import load_dotenv
 import os
 
 
-from tasks import image_captioning, ocr
+from tasks import image_captioning, ocr, biomedical_agent
 
 
 
 
 add_task = st.sidebar.radio(
     "Which task would you like to try?",
-    ("OCR", "Image Captioning")
+    ("Biomedical research agent", "OCR Text Extraction", "Vision-Language Image Captioning with BLIP")
 )
+if add_task == "Biomedical research agent":
+    biomedical_agent.main()
 
-if add_task == "OCR":
+if add_task == "OCR Text Extraction":
     ocr.main()
 
-if add_task == "Image Captioning":
+if add_task == "Vision-Language Image Captioning with BLIP":
     image_captioning.main()
 
 

@@ -1,5 +1,7 @@
 # My LAB
 
+https://connie-lab.streamlit.app/
+
 This repository contains several AI application demos demonstrating practical implementations of LLMs, RAG, Computer vision, and OCR Technologies. 
 The projects focus on building end-to-end AI applications, inclusing data processing, model integration, and interactive user interface. 
 
@@ -44,8 +46,8 @@ The system processes uploaded recipt images and converts visual text into struct
 - Conversion of unstructured images into machine-readable text
 
 
-## 3. 
-### Visiion-Language Imaga Captioning with BLIP
+## 3. Vision-Language Image Captioning with BLIP
+### Overview
 This project demonstrates an image captioning application using the BLIP(Bootstrapping Language-Image Pre-training) model. 
 Users can upload an image, and the model analyzes visual information to automatically generate a natural language description of the image. 
 This project showcases a practical application of vision-language models by combining computer vision and natual language generation. 
