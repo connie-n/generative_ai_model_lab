@@ -36,9 +36,7 @@ def main():
         for i, paper in enumerate(papers):
 
             st.divider()
-
             st.write(f"### {i+1}. {paper['title']}")
-
             st.write(
                 f"**Year:** {paper['year']}"
             )
