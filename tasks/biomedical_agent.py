@@ -1,4 +1,4 @@
-from utils.api.pubmed_api import PubMedClient
+from tasks.utils.api.pubmed_api import PubMedClient
 import os
 from dotenv import load_dotenv
 
