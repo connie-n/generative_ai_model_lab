@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os
 
 
-from tasks import image_captioning, ocr, biomedical_agent
+from tasks import ocr, biomedical_agent
 
 
 
@@ -21,8 +21,8 @@ if add_task == "Biomedical research agent":
 if add_task == "OCR Text Extraction":
     ocr.main()
 
-if add_task == "Vision-Language Image Captioning with BLIP":
-    image_captioning.main()
+# if add_task == "Vision-Language Image Captioning with BLIP":
+#     image_captioning.main()
 
 
 
