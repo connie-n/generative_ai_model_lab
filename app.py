@@ -16,13 +16,16 @@ add_task = st.sidebar.radio(
     ("Biomedical research agent", "OCR Text Extraction", "Vision-Language Image Captioning with BLIP")
 )
 if add_task == "Biomedical research agent":
+    from tasks import biomedical_agent
     biomedical_agent.main()
 
-# if add_task == "OCR Text Extraction":
-#     ocr.main()
+if add_task == "OCR Text Extraction":
+    from tasks import ocr
+    ocr.main()
 
-# if add_task == "Vision-Language Image Captioning with BLIP":
-#     image_captioning.main()
+if add_task == "Vision-Language Image Captioning with BLIP":
+    from tasks import image_captioning
+    image_captioning.main()
 
 
 

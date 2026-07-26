@@ -4,18 +4,15 @@ from dotenv import load_dotenv
 
 from transformers import pipeline
 
-
+@st.cache_resource
 def load_model_blip():
     return pipeline("image-to-text", model="Salesforce/blip-image-captioning-large")
 
 
-pipe = load_model_blip()
 
 
 def main():
     load_dotenv()
-
-    stream = True
 
     st.title("Vision-Language Image Captioning with BLIP")
 
@@ -28,6 +25,7 @@ def main():
     st.image(sample_image, caption="Sample Image for Image Captioning", use_column_width=True)
 
     if st.button("Process"):
+        pipe = load_model_blip()
         with st.spinner("======== Sending request to API.. ========"):
             output = pipe(sample_image)
             st.write(output)

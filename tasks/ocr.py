@@ -5,12 +5,10 @@ from dotenv import load_dotenv
 from tasks.utils.functions import parse_receipt_text
 from transformers import pipeline
 
-
+@st.cache_resource
 def load_model():
-    return pipeline("image-to-text", model="jinhybr/OCR-Donut-CORD")
+    return pipeline("document-question-answering", model="jinhybr/OCR-Donut-CORD")
 
-
-pipe = load_model()
 
 
 def main():
@@ -29,6 +27,7 @@ def main():
     st.image(sample_image, caption="Sample Receipt Image", use_column_width=True)
 
     if st.button("Process"):
+        pipe = load_model()
         with st.spinner("======== Sending request to API.. ========"):
             output = pipe(sample_image)
             st.write(output)
