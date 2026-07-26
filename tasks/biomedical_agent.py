@@ -1,32 +1,58 @@
+import streamlit as st
 from tasks.utils.api.pubmed_api import PubMedClient
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
-email = os.getenv("PUBMED_EMAIL")
+def main(): 
+        
 
-client = PubMedClient(
-    email = email
-)
+    load_dotenv()
+    email = os.getenv("PUBMED_EMAIL")
 
-max_results = int(
-    input("How many papers do you want to retreive?")
-)
+    client = PubMedClient(
+        email = email
+    )
 
-pmids = client.search(
-    "diabetes",
-    max_results=max_results
-)
+    query = st.text_input(
+        "Enter your PubMed search keyword"
+    )
 
-print(pmids)
+    max_results = st.number_input(
+        "How many papers do you want to retrieve?",
+        min_value=1,
+        max_value=20,
+        value=5
+    )
+    
+    if st.button("Search"):
+        pmids = client.search(
+            query,
+            max_results=max_results
+        )
 
-papers = client.fetch_details(pmids)
+        papers = client.fetch_details(pmids)
+        st.subheader(f"Found {len(papers)} papers")
 
+        for i, paper in enumerate(papers):
 
-for paper in papers:
-    print("\n----------------")
-    print(paper["title"])
-    print(paper["year"])
-    print(paper["abstract"][:600])
+            st.divider()
+
+            st.write(f"### {i+1}. {paper['title']}")
+
+            st.write(
+                f"**Year:** {paper['year']}"
+            )
+
+            if paper["abstract"]:
+                st.write(
+                    "**Abstract:**"
+                )
+                st.write(
+                    paper["abstract"][:600]
+                )
+            else:
+                st.write(
+                    "No abstract available"
+                )
 
 
