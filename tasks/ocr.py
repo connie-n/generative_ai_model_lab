@@ -24,7 +24,7 @@ def main():
     
     sample_image_path = "tasks/utils/sample/sample_recipt.png"
     sample_image = Image.open(sample_image_path)
-    st.image(sample_image, caption="Sample Receipt Image", use_column_width=True)
+    st.image(sample_image, caption="Sample Receipt Image", width="stretch")
 
     if st.button("Process"):
         pipe = load_model()
